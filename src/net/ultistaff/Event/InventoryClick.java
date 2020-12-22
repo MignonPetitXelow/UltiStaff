@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
+import static net.ultistaff.utils.ModAlert.sendToMods;
+
 public class InventoryClick implements Listener
 {
     @EventHandler
@@ -83,12 +85,4 @@ public class InventoryClick implements Listener
         }
     }
 
-    private void sendToMods(String HackName, String targetName) {
-        for (Player players : Bukkit.getServer().getOnlinePlayers()){
-            if(players.hasPermission("moderator.mod"))
-            {
-                players.sendMessage("§8[§c§l!§8]§c "+targetName+" §7reported for §bcheating ("+HackName+")");
-            }
-        }
-    }
 }
