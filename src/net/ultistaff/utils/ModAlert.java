@@ -22,4 +22,13 @@ public class ModAlert {
         }
     }
 
+    public static void sendToModsOther(String message) {
+        for (Player players : Bukkit.getServer().getOnlinePlayers()){
+            if(players.hasPermission("moderator.mod"))
+            {
+                players.sendMessage("message");
+            }
+        }
+    }
+
 }

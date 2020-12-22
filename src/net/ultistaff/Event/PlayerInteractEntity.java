@@ -1,5 +1,6 @@
 package net.ultistaff.Event;
 
+import net.ultistaff.utils.ModAlert;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,6 +29,13 @@ public class PlayerInteractEntity implements Listener {
 				else
 				{
 					Main.getInstance().freezed.add(t.getUniqueId());
+				   	/*Test*/
+					ModAlert.sendToModsOther("§8[§c§l!§8] §c"+t.getName()+" §7has been §b freezed (By "+p.getName()+")");
+					t.sendMessage("§6----------------------");
+					t.sendMessage("§bVous avez été gelé");
+					t.sendMessage("§5Discord: https://discord.gg/hgMkJXU");
+					t.sendMessage("§6----------------------");
+					/*Test*/
 				}
 				return;
 		}

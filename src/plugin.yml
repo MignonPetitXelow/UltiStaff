@@ -1,6 +1,6 @@
 name: Ultistaff
 version: 1.0.0
-author: Xelow
+author: Xelow/Venodez
 main: net.ultistaff.Main
 commands:
   mod:
