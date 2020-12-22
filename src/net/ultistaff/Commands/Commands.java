@@ -7,8 +7,10 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.PlayerInventory;
 
 import static net.ultistaff.utils.ModAlert.disableCommandsModAlert;
 
@@ -17,6 +19,7 @@ public class Commands implements CommandExecutor {
     {
         if(!(sender instanceof Player)){ sender.sendMessage("/mod");return false;}
         Player p = (Player) sender;
+        PlayerInventory pInv = p.getInventory();
         if(label.equalsIgnoreCase("mod"))
         {
             if(!(p.hasPermission("moderator.mod"))){ p.sendMessage("Mh... u cant execute this command");
@@ -26,11 +29,13 @@ public class Commands implements CommandExecutor {
             {
                 Main.getInstance().moderators.remove(p.getUniqueId());
                 p.sendMessage("§8[§c§l!§8] §c"+p.getName()+" §7Stop §busing (Moderator mod)");
-                p.getInventory().clear();
+                pInv.clear();
                 return false;
             }
             Main.getInstance().moderators.add(p.getUniqueId());
             p.sendMessage("§8[§c§l!§8] §c"+p.getName()+" §7Start §busing (Moderator mod)");
+            //Je vais sauvegarder l'inventaire juste avant
+            pInv.setItem(0, new ItemBuilder(Material.WOOD_SWORD).setName("§2Knockback Test").addEnchant(Enchantment.KNOCKBACK, 10).setUnbreakable().toItemStack());
         }
         if(label.equalsIgnoreCase("report"))
         {

@@ -73,8 +73,10 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setInfinityDurability() {
-        is.setDurability(Short.MAX_VALUE);
+    public ItemBuilder setUnbreakable() {
+        ItemMeta im = is.getItemMeta();
+        im.spigot().setUnbreakable(true);
+        is.setItemMeta(im);
         return this;
     }
 
