@@ -10,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
+import static net.ultistaff.utils.ModAlert.disableCommandsModAlert;
+
 public class Commands implements CommandExecutor {
     @Override public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
     {
@@ -52,11 +54,5 @@ public class Commands implements CommandExecutor {
     return false;
     }
 
-    private void disableCommandsModAlert(String cmd, String name) {
-        for (Player players : Bukkit.getServer().getOnlinePlayers()){
-                if(players.hasPermission("moderator.mod")) {
-                    players.sendMessage("§8[§c§l!§8]§c "+name+" §7execute §bcommand ("+cmd+")");
-                }
-        }
-    }
+
 }
