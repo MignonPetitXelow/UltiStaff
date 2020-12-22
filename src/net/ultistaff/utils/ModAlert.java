@@ -26,7 +26,7 @@ public class ModAlert {
         for (Player players : Bukkit.getServer().getOnlinePlayers()){
             if(players.hasPermission("moderator.mod"))
             {
-                players.sendMessage("message");
+                players.sendMessage(message);
             }
         }
     }
