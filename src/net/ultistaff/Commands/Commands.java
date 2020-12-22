@@ -36,6 +36,7 @@ public class Commands implements CommandExecutor {
             p.sendMessage("§8[§c§l!§8] §c"+p.getName()+" §7Start §busing (Moderator mod)");
             //Je vais sauvegarder l'inventaire juste avant
             pInv.setItem(0, new ItemBuilder(Material.WOOD_SWORD).setName("§2Knockback Test").addEnchant(Enchantment.KNOCKBACK, 10).setUnbreakable().toItemStack());
+            pInv.setItem(1, new ItemBuilder(Material.PACKED_ICE).setName("§bFreeze / Unfreeze").toItemStack());
         }
         if(label.equalsIgnoreCase("report"))
         {

@@ -12,6 +12,7 @@ public class Main extends JavaPlugin
 {
     private static Main instance;
     public ArrayList<UUID> moderators = new ArrayList<>();
+    public ArrayList<UUID> freezed = new ArrayList<>();
 
     @Override
     public void onEnable() { instance = this; new EventManager().register();
