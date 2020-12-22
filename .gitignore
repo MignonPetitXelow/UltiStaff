@@ -23,5 +23,5 @@
 hs_err_pid*
 
 #other
-
-.out
+.idea/
+out/
