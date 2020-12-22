@@ -15,7 +15,12 @@ public class InventoryClick implements Listener
     {
         if(e.getCurrentItem() == null)return;
         Player p = (Player) e.getWhoClicked();
-
+        if(e.getInventory().getName().endsWith("'s inventory"))
+        {
+        	e.setCancelled(true);
+        	return;
+        }
+        
         switch(e.getCurrentItem().getType())
         {
             case IRON_SWORD:

@@ -1,10 +1,13 @@
 package net.ultistaff.Event;
 
 import net.ultistaff.utils.ModAlert;
+
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import net.ultistaff.Main;
@@ -37,6 +40,25 @@ public class PlayerInteractEntity implements Listener {
 					t.sendMessage("§6----------------------");
 					/*Test*/
 				}
+				return;
+			
+			case "§aInventory":
+				Inventory tInv = t.getInventory();
+				Inventory inv = Bukkit.createInventory(null, 45, "§a" + t.getName() + "'s inventory");
+				inv.setItem(0, t.getInventory().getHelmet());
+				inv.setItem(1, t.getInventory().getChestplate());
+				inv.setItem(2, t.getInventory().getLeggings());
+				inv.setItem(3, t.getInventory().getBoots());
+				for (int i = 0; i<9; i++)
+				{	
+					inv.setItem(i+9, tInv.getItem(i));
+					inv.setItem(i+18, tInv.getItem(i+9));
+					inv.setItem(i+27, tInv.getItem(i+18));
+					inv.setItem(i+36, tInv.getItem(i+27));
+				}
+				p.openInventory(inv);
+				return;
+			default:
 				return;
 		}
 	}

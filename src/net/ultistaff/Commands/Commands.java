@@ -37,6 +37,7 @@ public class Commands implements CommandExecutor {
             //Je vais sauvegarder l'inventaire juste avant
             pInv.setItem(0, new ItemBuilder(Material.WOOD_SWORD).setName("§2Knockback Test").addEnchant(Enchantment.KNOCKBACK, 10).setUnbreakable().toItemStack());
             pInv.setItem(1, new ItemBuilder(Material.PACKED_ICE).setName("§bFreeze / Unfreeze").toItemStack());
+            pInv.setItem(2, new ItemBuilder(Material.BOOK).setName("§aInventory").toItemStack());
         }
         if(label.equalsIgnoreCase("report"))
         {
