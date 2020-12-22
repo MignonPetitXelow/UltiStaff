@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="UltiStaff:jar">
-    <output-path>$PROJECT_DIR$/../../SERVEUR/Serveur 1.7.10/plugins</output-path>
-    <root id="archive" name="UltiStaff.jar">
-      <element id="module-output" name="UltiStaff" />
-      <element id="extracted-dir" path="$USER_HOME$/Downloads/spigot-1.7.10-SNAPSHOT-b1657.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

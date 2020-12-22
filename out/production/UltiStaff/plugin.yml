@@ -1,7 +1,0 @@
-name: Ultistaff
-version: 1.0.0
-author: Xelow
-main: net.ultistaff.Main
-commands:
-  mod:
-  report:
